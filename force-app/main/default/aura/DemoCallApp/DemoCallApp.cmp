@@ -1,0 +1,4 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+	<lightning:button label="Open Maps" title="maps" onclick="{! c.handleClickMaps }"/>
+    <lightning:button label="Open SynDemo" title="maps" onclick="{! c.handleClickSynDemo }"/>
+</aura:component>

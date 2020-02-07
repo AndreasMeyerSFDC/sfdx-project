@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>HUMAN RESOURCE</fullName>
+        <default>false</default>
+        <label>HUMAN RESOURCE</label>
+    </customValue>
+    <customValue>
+        <fullName>MARKETING/PROMOTION</fullName>
+        <default>false</default>
+        <label>MARKETING/PROMOTION</label>
+    </customValue>
+    <customValue>
+        <fullName>PRODUCTION</fullName>
+        <default>false</default>
+        <label>PRODUCTION</label>
+    </customValue>
+    <customValue>
+        <fullName>SALES</fullName>
+        <default>false</default>
+        <label>SALES</label>
+    </customValue>
+    <customValue>
+        <fullName>CUSTOMER SERVICE SUPPORT</fullName>
+        <default>false</default>
+        <label>CUSTOMER SERVICE SUPPORT</label>
+    </customValue>
+    <customValue>
+        <fullName>ACCOUNTING AND FINANCE</fullName>
+        <default>false</default>
+        <label>ACCOUNTING AND FINANCE</label>
+    </customValue>
+    <customValue>
+        <fullName>DISTRIBUTION</fullName>
+        <default>false</default>
+        <label>DISTRIBUTION</label>
+    </customValue>
+    <customValue>
+        <fullName>RESEARCH AND DEVELOPMENT</fullName>
+        <default>false</default>
+        <label>RESEARCH AND DEVELOPMENT</label>
+    </customValue>
+    <masterLabel>Business Unit Picklist</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

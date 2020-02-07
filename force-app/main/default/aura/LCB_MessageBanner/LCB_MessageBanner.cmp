@@ -1,0 +1,35 @@
+<!-- **********************************************************************
+Name:  LCB_MessageBanner
+======================================================
+Purpose:
+
+Shows a MessageBanner using the SLDS ToastMessage design
+======================================================
+History
+Date        AUTHOR                  DETAIL
+26/03/2019  Andreas Meyer           INITIAL
+********************************************************************** -->
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,lightning:availableForFlowScreens" access="global" >
+    <aura:attribute name="state" type="String" default="warning" />
+    <aura:attribute name="message" type="String" default="" />
+    <aura:attribute name="description" type="String" default="" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:attribute name="assistivetext" type="String" default="" />
+    
+    
+    <div class="bannerwrapper">
+        <div class="slds-notify_container slds-is-relative">
+            <div aura:id="messagewrapper" class="slds-notify slds-notify_toast" role="status">
+                <span class="slds-assistive-text"></span>
+                <span class="slds-icon_container slds-icon-utility-error slds-m-right_small slds-no-flex slds-align-top">
+                    <lightning:icon aura:id="messageicon" variant="inverse" iconName="utility:warning" alternativeText="" />
+                </span>
+                <div class="slds-notify__content">
+                    <h2 class="slds-text-heading_small">{!v.message}</h2>
+                    <p>{!v.description}</p>
+                </div>
+            </div>
+        </div>
+    </div>   
+</aura:component>

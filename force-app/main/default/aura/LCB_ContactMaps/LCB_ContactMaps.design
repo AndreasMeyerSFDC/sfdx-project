@@ -1,0 +1,8 @@
+<design:component label="SYG Contact Address Maps">
+    <design:attribute name="showAddressFields" label="Show Address Fields above GoogleMaps" />
+    <design:attribute name="showMailingAddress" label="Show Mailing Address" />
+    <design:attribute name="showOtherAddress" label="Show Other Address" />
+    <design:attribute name="showGoogleLinks" label="Show Google Links below GoogleMaps" />
+    <design:attribute name="zoomFactorMailingLink" label="GoogleMaps Zoom Factor Mailing Address"  />
+    <design:attribute name="zoomFactorOtherLink" label="GoogleMaps Zoom Factor Other Address"  />        
+</design:component>

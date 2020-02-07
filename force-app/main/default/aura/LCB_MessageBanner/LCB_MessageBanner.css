@@ -1,0 +1,7 @@
+.THIS .slds-notify-container, .THIS .slds-notify_container{
+    z-index: 1!important;
+}
+
+.THIS .slds-notify_toast{
+    min-width: 10rem!important;
+}

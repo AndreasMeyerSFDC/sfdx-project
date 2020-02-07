@@ -1,0 +1,15 @@
+<!-- **********************************************************************
+Name:  LCB_DemoStandardOverwriter
+======================================================
+Purpose:
+
+standard overwrite demo
+======================================================
+History
+Date        AUTHOR                  DETAIL
+08/08/2019  Andreas Meyer           INITIAL
+********************************************************************** -->
+<aura:component implements="lightning:actionOverride,force:hasRecordId,force:hasSObjectName">
+    <aura:handler name="change" value="{!v.pageReference}" action="{!c.onPageReferenceChanged}" />
+    <aura:handler name="init" value="this" action="{!c.doInit}"/>	    
+</aura:component>

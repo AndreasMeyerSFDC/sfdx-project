@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome" access="global" >
+    <aura:attribute name="chatterGroupId" type="String" />
+    <aura:attribute name="customTitle" type="String" />
+    <lightning:card>
+        <aura:set attribute="title">
+            <strong>{!v.customTitle}</strong>
+        </aura:set>
+        <forceChatter:feed type="Record" subjectId="{!v.chatterGroupId}"/>
+    </lightning:card>
+</aura:component>

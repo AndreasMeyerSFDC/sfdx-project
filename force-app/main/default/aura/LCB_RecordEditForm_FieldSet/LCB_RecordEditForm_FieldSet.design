@@ -1,0 +1,8 @@
+<design:component>
+    <design:attribute name="title" label="Title" />
+    <design:attribute name="numberOfColumns" label="Columns" />
+    <design:attribute name="mode" label="Mode" datasource="view, edit, readonly" />
+    <!-- fieldsetSelected is a String b/c design resource doesnt accpt array -->
+    <design:attribute name="fieldsetSelected" label="Fieldset API Name" />
+    <design:attribute name="density" label="Density" datasource="auto, compact, comfy" />
+</design:component>

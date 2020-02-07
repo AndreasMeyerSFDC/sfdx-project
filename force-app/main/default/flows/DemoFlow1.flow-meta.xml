@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <choices>
+        <name>Option_DHL</name>
+        <choiceText>&lt;img src=&quot;https://www.msk-pharmalogistic.de/wp-content/uploads/2015/05/dhl-logo.png&quot;&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>DHL</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Option_FedEx</name>
+        <choiceText>&lt;img src=&quot;https://www.transpolis.nl/wp-content/uploads/2015/11/Fedex.png&quot;&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>fedex</stringValue>
+        </value>
+    </choices>
+    <interviewLabel>DemoFlow1 {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>DemoFlow1</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>Delivery_Service</name>
+        <label>Delivery Service</label>
+        <locationX>158</locationX>
+        <locationY>50</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>Delivery_Service</startElementReference>
+    <status>Draft</status>
+</Flow>

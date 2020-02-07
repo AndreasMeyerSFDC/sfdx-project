@@ -1,0 +1,87 @@
+<!-- **********************************************************************
+Name:  LCB_ContactMaps
+======================================================
+Purpose:
+
+GoogleMaps for MailingAddress and OtherAddress
+on Contact
+======================================================
+History
+Date        AUTHOR                  DETAIL
+15/08/2019  Andreas Meyer           INITIAL
+********************************************************************** -->
+<aura:component implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName" access="global" >
+
+	<aura:attribute name="contact" type="Object" description="The record object to be displayed"/>
+	<aura:attribute name="contactRecord" type="Object" description="A simplified view record object to be displayed"/>
+	<aura:attribute name="recordLoadError" type="String" description="An error message bound to force:recordData"/>
+    <aura:attribute name="showMailingAddress" type="Boolean" default="true" />
+    <aura:attribute name="showOtherAddress" type="Boolean" default="true" />  
+    <aura:attribute name="showMailingLink" type="Boolean" default="false" />
+    <aura:attribute name="showOtherLink" type="Boolean" default="false" />  
+    <aura:attribute name="zoomFactorMailingLink" type="Integer" default="16" />
+    <aura:attribute name="zoomFactorOtherLink" type="Integer" default="16" />  
+    <aura:attribute name="showAddressFields" type="Boolean" default="false" /> 
+    <aura:attribute name="showGoogleLinks" type="Boolean" default="true" /> 
+    <aura:attribute name="recordFormFields" type="String[]" />
+
+    
+    <force:recordData aura:id="contactRec" 
+        layoutType="FULL" 
+		recordId="{!v.recordId}"  
+		targetError="{!v.recordSaveError}"
+		targetRecord="{!v.contact}"
+		targetFields="{!v.contactRecord}"
+		mode="VIEW"
+		recordUpdated="{!c.handleRecordUpdated }"/>
+    
+    <lightning:card> 
+        <div class="slds-p-left_small slds-p-right_small">	   
+  
+            <aura:if isTrue="{!v.showAddressFields}">
+                    <lightning:layout pullToBoundary="medium" >
+                            <lightning:layoutItem flexibility="auto" padding="horizontal-medium" size="12">               
+                                <lightning:recordForm aura:id="recordForm" 
+                                recordId="{!v.recordId}" 
+                                objectApiName="{!v.sObjectName}"
+                                fields= "{!v.recordFormFields}"
+                                columns="2"
+                                mode ="view"  />   
+                            </lightning:layoutItem>
+                    </lightning:layout>         
+            </aura:if>
+
+            <lightning:layout pullToBoundary="medium" >
+                <aura:if isTrue="{!v.showMailingAddress}">
+                <lightning:layoutItem flexibility="auto" padding="horizontal-medium" size="6">
+                    <div aura:id="mapContainerMailing"></div> 
+                    <aura:if isTrue="{!v.showMailingLink}">
+                        <br />
+                        <p>
+                            <a onclick="{!c.navigateToGoogleMailing}" >Show in Google Maps</a>
+                        </p>
+                    </aura:if>
+                </lightning:layoutItem>
+                </aura:if>
+                <aura:if isTrue="{!v.showOtherAddress}">
+                <lightning:layoutItem flexibility="auto" padding="horizontal-medium" size="6">
+                    <div aura:id="mapContainerOther"></div>
+                    <aura:if isTrue="{!v.showOtherLink}">
+                        <br />
+                        <p>
+                            <a onclick="{!c.navigateToGoogleOther}" >Show in Google Maps</a>
+                        </p>     
+                    </aura:if>
+                </lightning:layoutItem>
+                </aura:if>
+            </lightning:layout>
+            
+            <aura:if isTrue="{!not(empty(v.recordLoadError))}">
+                <div class="error slds-box">
+                    {!v.recordLoadError}
+                </div> 
+            </aura:if>
+
+        </div>
+    </lightning:card>
+</aura:component>

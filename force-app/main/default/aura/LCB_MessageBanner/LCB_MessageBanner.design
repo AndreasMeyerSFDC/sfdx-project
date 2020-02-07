@@ -1,0 +1,5 @@
+<design:component>
+	<design:attribute name="state" label="Message State" datasource="success,warning,error"/> 
+    <design:attribute name="message" label="Message Header" /> 
+    <design:attribute name="description" label="Message Body" /> 
+</design:component>

@@ -1,0 +1,4 @@
+<design:component label="LCB ChatterGroupFeed">
+    <design:attribute name="chatterGroupId" label="RecordID of the chatter group" />
+    <design:attribute name="customTitle" label="Custom title for chatter group section" />
+</design:component>
